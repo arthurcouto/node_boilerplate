@@ -1,0 +1,21 @@
+{
+  "name": "node-boilerplate",
+  "version": "0.0.1",
+  "description": "node boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "development": "NODE_ENV=development node index.js",
+    "watch": "NODE_ENV=local nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-jwt": "^5.0.0",
+    "request-promise": "^4.1.1",
+    "sequelize": "1STi/sequelize"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
