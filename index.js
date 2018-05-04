@@ -3,7 +3,7 @@ process.env.NODE_ENV = process.env.NODE_ENV;
 
 const express = require('express');
 const config = require('./config/main');
-//const LoginApi = require('./services/portal/login-api');
+const LoginApi = require('./services/portal/login-api');
 const bodyParser = require('body-parser');
 const jwt = require('express-jwt');
 
@@ -43,13 +43,14 @@ class Server {
     }).unless({
       path: [
         '/',
-        '/session/create'
+        '/session/create',
+        '/users'
       ]}
     ));
   }
 
   boot() {
-    //new LoginApi(this.router, this.sql).expose();
+    new LoginApi(this.router, this.sql).expose();
     this.router.get('/', function(req, res) {
       res.status(200).json({
         status: 'running'
