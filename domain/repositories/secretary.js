@@ -7,7 +7,6 @@ module.exports = class Secretary {
   }
 
   registerUser(data) {
-    //return this.repo.all.usuarios.create(user);
     return Promise.resolve({
       name: 'Arthur Couto',
       id: 2877

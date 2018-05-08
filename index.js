@@ -4,6 +4,7 @@ process.env.NODE_ENV = process.env.NODE_ENV;
 const express = require('express');
 const config = require('./config/main');
 const LoginApi = require('./services/portal/login-api');
+const Repository = require(`./domain/entities/index`);
 const bodyParser = require('body-parser');
 const jwt = require('express-jwt');
 
@@ -11,6 +12,7 @@ class Server {
 
   constructor() {
     this.app = express();
+    this.sql = new Repository(config.sql);
     this.router = express.Router();
   }
 
